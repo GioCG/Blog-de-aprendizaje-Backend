@@ -1,0 +1,99 @@
+{
+    "info": {
+        "_postman_id": "35c6472b-13e8-4611-9908-c7be2e947e62",
+        "name": "commit",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "editCommit",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:3000/GestorOpinionesSystem/v1/commit/67be79e601ade43c8e8efc12",
+                    "path": [
+                        "GestorOpinionesSystem",
+                        "v1",
+                        "commit",
+                        "67be79e601ade43c8e8efc12"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "header": [
+                    {
+                        "key": "x-token",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JiNmJjMjZmMzM4OGQyOTE2M2FjZjIiLCJpYXQiOjE3NDA1MzgyMTMsImV4cCI6MTc0MDU0MTgxM30.l03h0fZhRVVwOrkigEo2IJWWmWVI8AG8Ds_VCHldI6U"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"textoprincipal\":\"WASASDA\"\n}"
+                }
+            }
+        },
+        {
+            "name": "addCommit",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:3000/GestorOpinionesSystem/v1/commit/",
+                    "path": [
+                        "GestorOpinionesSystem",
+                        "v1",
+                        "commit"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"textoprincipal\":\"Bien\",\n  \"username\":\"pe\",\n  \"titulo\":\"hdios\"\n}"
+                }
+            }
+        },
+        {
+            "name": "deleteCommit",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:3000/GestorOpinionesSystem/v1/commit/67be7cba01cee991cb433c9c",
+                    "path": [
+                        "GestorOpinionesSystem",
+                        "v1",
+                        "commit",
+                        "67be7cba01cee991cb433c9c"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "header": [
+                    {
+                        "key": "x-token",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JiNmJjMjZmMzM4OGQyOTE2M2FjZjIiLCJpYXQiOjE3NDA1NDI5NzQsImV4cCI6MTc0MDU0NjU3NH0.1r8vUheFI4Uk9MDoHZMKlnO-FERRrO2wg1X6EhL4XFo"
+                    }
+                ]
+            }
+        }
+    ]
+}
