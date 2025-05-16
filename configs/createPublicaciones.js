@@ -1,5 +1,6 @@
 import User from "../src/user/user.model.js";
 import Categori from "../src/categori/categori.model.js";
+<<<<<<< HEAD
 import Publicacion from "../src/publicaciones/publicacion.model.js";
 
 export const createPublicaciones = async () => {
@@ -7,6 +8,15 @@ export const createPublicaciones = async () => {
         const admin = await User.findOne({ username: { $regex: /^admin$/i } });
         if (!admin) {
             console.log("Usuario admin no encontrado. Crea el usuario primero.");
+=======
+import Publicacion from "../src/publicacion/publicacion.model.js";
+
+export const createPublicaciones = async () => {
+    try {
+        const admin = await User.findOne({ username: "admin" });
+        if (!admin) {
+            console.log(" Usuario admin no encontrado. Crea el usuario primero.");
+>>>>>>> 3a5537f2f0acc8beddc5e011761d2b78cfe9151f
             return;
         }
 
@@ -14,6 +24,7 @@ export const createPublicaciones = async () => {
             {
                 name: "practicasupervisada",
                 publicaciones: [
+<<<<<<< HEAD
                     { 
                         titulo: "Exposición grupal #1",
                         textoprincipal: `
@@ -255,18 +266,43 @@ Detalles:
 Profesores: Josué Noj y Braulio Echeverria
                       `.trim()
                     }
+=======
+                    { titulo: "Informe de avance", textoprincipal: "Entrega del informe parcial de la práctica." },
+                    { titulo: "Presentación final", textoprincipal: "Exposición oral del proyecto final ante tutores." }
+                ]
+            },
+            {
+                name: "taller",
+                publicaciones: [
+                    { titulo: "Taller de React", textoprincipal: "Práctica intensiva en desarrollo con ReactJS." },
+                    { titulo: "Taller de MongoDB", textoprincipal: "Introducción y consulta de bases de datos no relacionales." }
+                ]
+            },
+            {
+                name: "tecnologia",
+                publicaciones: [
+                    { titulo: "Novedades en inteligencia artificial", textoprincipal: "Resumen de avances recientes en IA." },
+                    { titulo: "Tendencias de desarrollo web", textoprincipal: "Exploración de herramientas modernas como Vite y TailwindCSS." }
+>>>>>>> 3a5537f2f0acc8beddc5e011761d2b78cfe9151f
                 ]
             }
         ];
 
         for (const cat of categoriasConTareas) {
+<<<<<<< HEAD
             const categoria = await Categori.findOne({ name: { $regex: new RegExp(`^${cat.name}$`, "i") } });
             if (!categoria) {
                 console.log(`Categoría '${cat.name}' no encontrada. Omisión de sus publicaciones.`);
+=======
+            const categoria = await Categori.findOne({ name: cat.name });
+            if (!categoria) {
+                console.log(` Categoría '${cat.name}' no encontrada. Omisión de sus publicaciones.`);
+>>>>>>> 3a5537f2f0acc8beddc5e011761d2b78cfe9151f
                 continue;
             }
 
             for (const pub of cat.publicaciones) {
+<<<<<<< HEAD
                 const existe = await Publicacion.findOne({
                     titulo: pub.titulo,
                     categori: categoria._id
@@ -276,6 +312,8 @@ Profesores: Josué Noj y Braulio Echeverria
                     continue;
                 }
 
+=======
+>>>>>>> 3a5537f2f0acc8beddc5e011761d2b78cfe9151f
                 const nueva = new Publicacion({
                     titulo: pub.titulo,
                     textoprincipal: pub.textoprincipal,
@@ -285,11 +323,19 @@ Profesores: Josué Noj y Braulio Echeverria
                 });
 
                 await nueva.save();
+<<<<<<< HEAD
                 console.log(`Publicación '${pub.titulo}' creada en la categoría '${cat.name}'.`);
             }
         }
 
         console.log("Todas las publicaciones generadas automáticamente con éxito.");
+=======
+                console.log(` Publicación '${pub.titulo}' creada en la categoría '${cat.name}'.`);
+            }
+        }
+
+        console.log("Publicaciones generadas automáticamente con éxito.");
+>>>>>>> 3a5537f2f0acc8beddc5e011761d2b78cfe9151f
 
     } catch (err) {
         console.error("Error al crear publicaciones automáticas:", err.message);
