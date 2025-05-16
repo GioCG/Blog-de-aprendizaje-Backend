@@ -192,7 +192,6 @@ export const eliminarCommit = async (req, res) => {
         });
     }
 };
-<<<<<<< HEAD
 
 export const listCommits = async (req, res) => {
     try {
@@ -247,5 +246,3 @@ export const listCommits = async (req, res) => {
         });
     }
 };
-=======
->>>>>>> 3a5537f2f0acc8beddc5e011761d2b78cfe9151f

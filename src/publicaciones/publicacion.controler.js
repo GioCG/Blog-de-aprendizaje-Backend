@@ -161,7 +161,6 @@ export const deletPublicacion = async (req, res) => {
 };
 
 export const listPublicacion = async (req, res) => {
-<<<<<<< HEAD
     const { limite = 50, desde = 0 } = req.query;
     const query = { status: true };
 
@@ -177,27 +176,10 @@ export const listPublicacion = async (req, res) => {
             user: pub.user?.username || 'Sin usuario',
             titulo: pub.titulo,
             textoprincipal: pub.textoprincipal,
-            commit: pub.commit, // Si quieres ocultar los IDs aquí también, puedes mapearlos.
+            commit: pub.commit, 
             status: pub.status,
             createdAt: pub.createdAt,
             updatedAt: pub.updatedAt,
-=======
-    const { limite = 50, desde = 0} = req.query;
-    const query = { status: true };
-
-    try {
-        
-        const publicacion = await Publicacion.find(query)
-            .skip(Number(desde))
-            .limit(Number(limite));
-
-        const OwnerName = await Promise.all(publicacion.map(async (publica) =>{
-            const user = await User.findById(publica.user);
-            return {
-                ...publica.toObject(),
-                user: user ? user.username : "Propietario no encontrado"
-            }
->>>>>>> 3a5537f2f0acc8beddc5e011761d2b78cfe9151f
         }));
 
         const total = await Publicacion.countDocuments(query);
@@ -205,7 +187,6 @@ export const listPublicacion = async (req, res) => {
         res.status(200).json({
             success: true,
             total,
-<<<<<<< HEAD
             publicaciones,
         });
     } catch (error) {
@@ -221,16 +202,3 @@ export const listPublicacion = async (req, res) => {
 
 
 
-=======
-            publicaciones: OwnerName
-        })
-
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: 'Error al obtener publicaciones',
-            error
-        })
-    }
-}
->>>>>>> 3a5537f2f0acc8beddc5e011761d2b78cfe9151f
