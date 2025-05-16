@@ -1,0 +1,34 @@
+[
+  {
+    "_id": {
+      "$oid": "67bb68689be7accc8c8a542a"
+    },
+    "name": "pelicula",
+    "status": true,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67bb6f9d8d52a46a88214522"
+    },
+    "name": "miedo",
+    "status": true,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67bb889a370c6bf61246e802"
+    },
+    "name": "default",
+    "status": true,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67bd25c0ceb4312a65f12c90"
+    },
+    "name": "wasa",
+    "status": false,
+    "__v": 0
+  }
+]
