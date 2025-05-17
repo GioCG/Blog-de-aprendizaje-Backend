@@ -2,7 +2,7 @@ import Categori from "../src/categori/categori.model.js";
 
 export const createDefaultCategori = async () => {
   try {
-    const defaultCategories = ["PracticaSupervisada", "Taller III", "Tecnologia"];
+    const defaultCategories = ["practicasupervisada", "talleriii", "tecnologia"];
 
     for (const name of defaultCategories) {
       const exists = await Categori.findOne({ name });

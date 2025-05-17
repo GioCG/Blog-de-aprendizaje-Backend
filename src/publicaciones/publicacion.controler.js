@@ -1,6 +1,6 @@
 import Publicacion from '../publicaciones/publicacion.model.js'
 import User from'../user/user.model.js'
-import Categori from '../categori/categori.model.js'
+import Categoria from '../categori/categori.model.js'
 import Commit from '../commit/commit.model.js'
 import jwt from 'jsonwebtoken';
 
@@ -18,9 +18,9 @@ export const addPublicacion = async (req, res) => {
             });
         }
 
-        let categori = await Categori.findOne({ name: "default" });
+        let categori = await Category.findOne({ name: "default" });
         if (lowerCategori) {
-            const foundCategory = await Categori.findOne({ name: lowerCategori });
+            const foundCategory = await Category.findOne({ name: lowerCategori });
             if (!foundCategory) {
                 return res.status(404).json({
                     success: false,
@@ -33,7 +33,7 @@ export const addPublicacion = async (req, res) => {
         const publica = new Publicacion({
             titulo,
             textoprincipal,
-            categori: categori._id, 
+            categori: Category._id, 
             user: user._id, 
             status: true 
         });
@@ -46,7 +46,7 @@ export const addPublicacion = async (req, res) => {
             publicDetails: {
                 public: publica.titulo,
                 user: user.toObject(),
-                categori: categori.toObject(),
+                categori: Category.toObject(),
                 status: publica.status
             }
         });
@@ -86,7 +86,7 @@ export const editPublicacion = async (req, res) => {
         let categoryToUpdate = Publicacion.category;
  
         if (publicacioCategoria) {
-            const categoryFound = await Categori.findOne({ nameCat: publicacioCategoria });
+            const categoryFound = await Category.findOne({ nameCat: publicacioCategoria });
             if (!categoryFound) {
                 return res.status(404).json({
                     msg: "La categoría seleccionada no existe"
@@ -160,43 +160,47 @@ export const deletPublicacion = async (req, res) => {
     }
 };
 
-export const listPublicacion = async (req, res) => {
-    const { limite = 50, desde = 0 } = req.query;
-    const query = { status: true };
+export const searchPublicationsByCategory = async (req, res) => {
+  try {
+    const { category } = req.params;
 
-    try {
-        const publicacionesRaw = await Publicacion.find(query)
-            .skip(Number(desde))
-            .limit(Number(limite))
-            .populate({ path: 'user', select: 'username' })
-            .populate({ path: 'categori', select: 'name' });
+    const categoria = await Categoria.findOne({
+      name: new RegExp(`^${category}$`, "i"),
+      status: true,
+    });
 
-        const publicaciones = publicacionesRaw.map((pub) => ({
-            categori: pub.categori?.name || 'Sin categoría',
-            user: pub.user?.username || 'Sin usuario',
-            titulo: pub.titulo,
-            textoprincipal: pub.textoprincipal,
-            commit: pub.commit, 
-            status: pub.status,
-            createdAt: pub.createdAt,
-            updatedAt: pub.updatedAt,
-        }));
-
-        const total = await Publicacion.countDocuments(query);
-
-        res.status(200).json({
-            success: true,
-            total,
-            publicaciones,
-        });
-    } catch (error) {
-        console.error('Error al obtener publicaciones:', error);
-        res.status(500).json({
-            success: false,
-            message: 'Error al obtener publicaciones',
-            error: error.message,
-        });
+    if (!categoria) {
+      return res.status(404).json({
+        success: false,
+        message: `No se encontró la categoría "${category}"`,
+      });
     }
+
+    const publicaciones = await Publicacion.find({
+      category: categoria._id,
+      status: true,
+    })
+      .populate("category", "name -_id")
+      .populate("user", "username -_id")
+      .lean(); 
+
+    const publicacionesUnicas = Array.from(
+      new Map(publicaciones.map(pub => [pub._id.toString(), pub])).values()
+    );
+
+    res.json({
+      success: true,
+      total: publicacionesUnicas.length,
+      publications: publicacionesUnicas,
+    });
+  } catch (error) {
+    console.error("Error al buscar publicaciones por categoría:", error);
+    res.status(500).json({
+      success: false,
+      message: "Error al buscar publicaciones por categoría",
+      error: error.message,
+    });
+  }
 };
 
 

@@ -1,16 +1,16 @@
-import Categori from "./categori.model.js"
+import Categoria from "./categori.model.js"
 import Publicacion from "../publicaciones/publicacion.model.js"
-export const addCategori = async (req, res) => {
+export const addCategory = async (req, res) => {
     try {
         const data = req.body;
-        const categori = await Categori.create({
+        const category = await Categoria.create({
             name: data.name
         })
 
         return res.status(201).json({
-            message: "categori added successfully",
+            message: "category added successfully",
             userDetails: {
-                categori: categori.name
+                category: category.name
             }
         });
 
@@ -19,46 +19,46 @@ export const addCategori = async (req, res) => {
         console.log(error);
 
         return res.status(500).json({
-            message: "add categori failed",
+            message: "add category failed",
             error: error.message
         })
 
     }
 }
-export const editCategori = async (req, res = response) => {
+export const editCategory = async (req, res = response) => {
     try {
         const {id} = req.params;
         const { _id, ...data} = req.body;
 
-        const categori = await Categori.findByIdAndUpdate(id,data,{new:true});
+        const category = await Categoria.findByIdAndUpdate(id,data,{new:true});
 
         res.status(200).json({
             success:true,
-            msg:'categori Update',
-            categori
+            msg:'category Update',
+            category
         })
     } catch (error) {
         res.status(500).json({
             success: false,
-            msg: 'Error at Update categori',
+            msg: 'Error at Update category',
             error
         })
         
     }
 }
 
-export const deleteCategori = async (req, res) => {
+export const deleteCategory = async (req, res) => {
     try {
         const{id} = req.params;
-        const categori = await Categori.findByIdAndUpdate(id, { status: false }, { new: true });
+        const category = await Categoria.findByIdAndUpdate(id, { status: false }, { new: true });
 
-        if (!categori) {
+        if (!category) {
             return res.status(404).json({
                 success: false,
                 message: "Categoría no encontrada"
             });
         }
-        const categoriaDefault = await Categori.findOne({ name: "default" });
+        const categoriaDefault = await Categoria.findOne({ name: "default" });
         if (!categoriaDefault) {
             return res.status(500).json({
                 success: false,
@@ -66,14 +66,14 @@ export const deleteCategori = async (req, res) => {
             });
         }
         await Publicacion.updateMany(
-            { categori: id },  
-            { categori: categoriaDefault._id }
+            { category: id },  
+            { category: categoriaDefault._id }
         );
 
         res.status(200).json({
             success: true,
             message: "Categoría desactivada y publicaciones actualizadas",
-            categori,
+            category,
             reassignedTo: categoriaDefault.name
         });
 

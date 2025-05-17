@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { validarJWT } from "../middleware/validar-jwt.js";     
 import {tieneRole} from "../middleware/validar-roles.js"
-import { addCategori,editCategori,deleteCategori } from "../categori/categoi.controller.js";
+import { addCategory,editCategory,deleteCategory } from "../categori/categoi.controller.js";
 import {deleteFileOnError} from "../middleware/delete-file-on-error.js"
 
 const router = Router();
@@ -13,7 +13,7 @@ router.post(
         tieneRole("ADMIN_ROLE"),
         deleteFileOnError,
     ],
-    addCategori
+    addCategory
 );
  
 router.put(
@@ -23,7 +23,7 @@ router.put(
         tieneRole("ADMIN_ROLE"),
         deleteFileOnError,
     ],
-    editCategori
+    editCategory
 )
 
 router.delete(
@@ -33,7 +33,7 @@ router.delete(
         tieneRole("ADMIN_ROLE"),
         deleteFileOnError,
     ],
-    deleteCategori
+    deleteCategory
 )
  
 export default router;

@@ -1,6 +1,7 @@
-import User from "../src/user/user.model.js";
 import Categori from "../src/categori/categori.model.js";
+import User from "../src/user/user.model.js";
 import Publicacion from "../src/publicaciones/publicacion.model.js";
+import {existePublicacion}  from "../src/middleware/validate-autoPublicacion.js"; 
 
 export const createPublicaciones = async () => {
     try {
@@ -70,7 +71,7 @@ Evaluación:
                 ]
             },
             {
-                name: "Taller III",
+                name: "talleriii",
                 publicaciones: [
                     { 
                         titulo: "Taller de React",
@@ -259,6 +260,7 @@ Profesores: Josué Noj y Braulio Echeverria
             }
         ];
 
+        
         for (const cat of categoriasConTareas) {
             const categoria = await Categori.findOne({ name: { $regex: new RegExp(`^${cat.name}$`, "i") } });
             if (!categoria) {
@@ -267,11 +269,8 @@ Profesores: Josué Noj y Braulio Echeverria
             }
 
             for (const pub of cat.publicaciones) {
-                const existe = await Publicacion.findOne({
-                    titulo: pub.titulo,
-                    categori: categoria._id
-                });
-                if (existe) {
+                const yaExiste = await existePublicacion(pub.titulo, categoria._id);
+                if (yaExiste) {
                     console.log(`La publicación '${pub.titulo}' ya existe en la categoría '${cat.name}', omitiendo creación.`);
                     continue;
                 }
@@ -279,7 +278,7 @@ Profesores: Josué Noj y Braulio Echeverria
                 const nueva = new Publicacion({
                     titulo: pub.titulo,
                     textoprincipal: pub.textoprincipal,
-                    categori: categoria._id,
+                    category: categoria._id,
                     user: admin._id,
                     status: true
                 });
@@ -290,7 +289,6 @@ Profesores: Josué Noj y Braulio Echeverria
         }
 
         console.log("Todas las publicaciones generadas automáticamente con éxito.");
-
     } catch (err) {
         console.error("Error al crear publicaciones automáticas:", err.message);
     }
