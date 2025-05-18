@@ -5,20 +5,11 @@ import jwt from 'jsonwebtoken';
 
 export const agregarCommit = async (req, res) => {
     try {
-        const { textoprincipal, username, titulo } = req.body;
+        const { textoprincipal, username, titulo, parentCommitId } = req.body;
 
-        const lowerUsername = username ? username.toLowerCase() : null;
-        const lowerPublicacion = titulo ? titulo.toLowerCase() : null;
 
-        const publicacion = await Publicacion.findOne({ titulo: lowerPublicacion });
-        if (!publicacion) {
-            return res.status(404).json({
-                success: false,
-                message: "La publicación no existe"
-            });
-        }
+        const user = await User.findOne({ username: new RegExp(`^${username}$`, 'i') });
 
-        const user = await User.findOne({ username: lowerUsername });
         if (!user) {
             return res.status(404).json({
                 success: false,
@@ -26,35 +17,60 @@ export const agregarCommit = async (req, res) => {
             });
         }
 
-       const nuevoCommit = new Commit({
+        let publicacion = null;
+        let parentCommit = null;
+
+        if (titulo) {
+            publicacion = await Publicacion.findOne({ titulo: new RegExp(`^${titulo}$`, 'i') });
+            if (!publicacion) {
+                return res.status(404).json({
+                    success: false,
+                    message: "La publicación no existe"
+                });
+            }
+        }
+
+        if (parentCommitId) {
+            parentCommit = await Commit.findById(parentCommitId);
+            if (!parentCommit) {
+                return res.status(404).json({
+                    success: false,
+                    message: "El comentario padre no existe"
+                });
+            }
+        }
+
+        if (!publicacion && !parentCommit) {
+            return res.status(400).json({
+                success: false,
+                message: "Debe especificar un título de publicación o un comentario padre"
+            });
+        }
+
+        const nuevoCommit = new Commit({
             textoprincipal,
-            user: user._id,  
-            publicacion: publicacion._id,  
-            status: true 
+            user: user._id,
+            publicacion: publicacion ? publicacion._id : null,
+            parentCommit: parentCommit ? parentCommit._id : null,
+            status: true
         });
+
         const commitGuardado = await nuevoCommit.save();
 
-        await Publicacion.findByIdAndUpdate(publicacion._id, {
-            $push: { commit: commitGuardado._id }
-        });
-
-        const publicacionActualizada = await Publicacion.findById(publicacion._id).populate({
-            path: "commit",
-            select: "textoprincipal",
-            populate: {
-                path: "user",
-                select: "username"
-            }
-        });
+        if (publicacion) {
+            await Publicacion.findByIdAndUpdate(publicacion._id, {
+                $push: { commit: commitGuardado._id }
+            });
+        }
 
         return res.status(200).json({
             success: true,
             message: "Commit agregado correctamente",
-            publicacionConCommit: {
+            commit: {
+                id: commitGuardado._id,
+                texto: commitGuardado.textoprincipal,
                 usuario: user.username,
-                titulo: publicacionActualizada.titulo,
-                texto: publicacionActualizada.textoprincipal,
-                commits: publicacionActualizada.commit
+                parentCommit: commitGuardado.parentCommit
             }
         });
 
@@ -67,6 +83,7 @@ export const agregarCommit = async (req, res) => {
         });
     }
 };
+
 
 
 export const editarCommit = async (req, res) => {
@@ -222,13 +239,14 @@ export const listCommits = async (req, res) => {
         }
 
         const commits = await Commit.find(filtro)
+            .populate('user')
+            .populate('publicacion') 
             .populate({
-                path: 'user',
-                select: 'username'
-            })
-            .populate({
-                path: 'publicacion',
-                select: 'titulo'
+                path: 'parentCommit',
+                populate: {
+                    path: 'user',
+                    select: 'username'
+                }
             });
 
         return res.status(200).json({
@@ -246,3 +264,4 @@ export const listCommits = async (req, res) => {
         });
     }
 };
+

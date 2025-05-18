@@ -160,6 +160,23 @@ export const deletPublicacion = async (req, res) => {
     }
 };
 
+async function populateChildCommits(commits) {
+  return Promise.all(commits.map(async commit => {
+    const populatedCommit = await Commit.findById(commit._id)
+      .populate('user', 'username')
+      .populate({
+        path: 'childCommits',
+        match: { status: true }
+      }).lean();
+
+    if (populatedCommit.childCommits && populatedCommit.childCommits.length > 0) {
+      populatedCommit.childCommits = await populateChildCommits(populatedCommit.childCommits);
+    }
+
+    return populatedCommit;
+  }));
+}
+
 export const searchPublicationsByCategory = async (req, res) => {
   try {
     const { category } = req.params;
@@ -182,16 +199,21 @@ export const searchPublicationsByCategory = async (req, res) => {
     })
       .populate("category", "name -_id")
       .populate("user", "username -_id")
-      .lean(); 
+      .populate({
+        path: "commit",
+        match: { parentCommit: null }, 
+        populate: { path: 'user', select: 'username -_id' }
+      })
+      .lean();
 
-    const publicacionesUnicas = Array.from(
-      new Map(publicaciones.map(pub => [pub._id.toString(), pub])).values()
-    );
+    for (const pub of publicaciones) {
+      pub.commit = await populateChildCommits(pub.commit);
+    }
 
     res.json({
       success: true,
-      total: publicacionesUnicas.length,
-      publications: publicacionesUnicas,
+      total: publicaciones.length,
+      publications: publicaciones,
     });
   } catch (error) {
     console.error("Error al buscar publicaciones por categoría:", error);
@@ -202,7 +224,4 @@ export const searchPublicationsByCategory = async (req, res) => {
     });
   }
 };
-
-
-
 
