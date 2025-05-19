@@ -1,0 +1,476 @@
+[{
+  "_id": {
+    "$oid": "67be64a951c86be566864818"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T00:47:37.267Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T00:47:37.267Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be65ad1170990d1dd0d6f7"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T00:51:57.098Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T00:51:57.098Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be65ca46939879d9ea26bf"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T00:52:26.530Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T00:52:26.530Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be690799551706f3c5d7ee"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T01:06:15.321Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T01:06:15.321Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be695aa7b62639829f81f0"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T01:07:38.411Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T01:07:38.411Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be6966eac41cfe64bcd458"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T01:07:50.171Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T01:07:50.171Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be69705cad3e794bc737cc"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T01:08:00.079Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T01:08:00.079Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be69f12101c4fc47f4b11f"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T01:10:10.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T01:10:10.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be6b7858b19d78195d6512"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T01:16:40.042Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T01:16:40.042Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be70fb5a777c97f9576a82"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T01:40:11.587Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T01:40:11.587Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be72e94a208c9d334ff3cb"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T01:48:25.834Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T01:48:25.834Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be733cbcdb83411ab75409"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T01:49:48.922Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T01:49:48.922Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be739c6db8068cdc0f4e06"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T01:51:24.992Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T01:51:24.992Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be73a4ff0efd1fa5a16ac7"
+  },
+  "textoprincipal": "¡ESA NO DA MIEDO!",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T01:51:32.651Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T01:51:32.651Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be79e601ade43c8e8efc12"
+  },
+  "textoprincipal": "WASASDA",
+  "user": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:18:14.836Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:54:06.411Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be7a1101ade43c8e8efc1f"
+  },
+  "textoprincipal": "Bien",
+  "user": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:18:57.987Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:18:57.987Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be7ae69df8c22c255c5dab"
+  },
+  "textoprincipal": "Bien",
+  "user": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:22:30.558Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:22:30.558Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be7b9ed50a91f74c2a3100"
+  },
+  "textoprincipal": "Bien",
+  "user": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:25:34.698Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:25:34.698Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be7bcfe24210d60d35bf90"
+  },
+  "textoprincipal": "Bien",
+  "user": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:26:23.842Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:26:23.842Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be7beca5495b7e30a89ec8"
+  },
+  "textoprincipal": "Bien",
+  "user": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:26:52.224Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:26:52.224Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be7c5ec30adb6e29f1a371"
+  },
+  "textoprincipal": "Bien",
+  "user": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:28:46.022Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:28:46.022Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be7c84880eb04a90f1a171"
+  },
+  "textoprincipal": "Bien",
+  "user": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:29:24.697Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:29:24.697Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be7c941ed2374c80c2e489"
+  },
+  "textoprincipal": "Bien",
+  "user": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:29:40.416Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:29:40.416Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be7cae8c241d39d41c521b"
+  },
+  "textoprincipal": "Bien",
+  "user": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:30:06.576Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:30:06.576Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be7cba01cee991cb433c9c"
+  },
+  "textoprincipal": "Bien",
+  "user": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-26T02:30:18.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T04:12:24.255Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be7db5d6112ab4b73f734c"
+  },
+  "textoprincipal": "Bien",
+  "user": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:34:29.073Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:34:29.073Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be805e5bc3de5b8aef87f4"
+  },
+  "textoprincipal": "Bien",
+  "user": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:45:50.962Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:45:50.962Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67be809f5bc3de5b8aef87fc"
+  },
+  "textoprincipal": "Bien",
+  "user": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:46:55.681Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:46:55.681Z"
+  },
+  "__v": 0
+}]
