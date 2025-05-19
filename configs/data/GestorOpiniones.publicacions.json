@@ -1,0 +1,145 @@
+[
+  {
+    "_id": { "$oid": "67bb778e24783fb988835893" },
+    "categori": "67bb889a370c6bf61246e802",
+    "user": { "$oid": "67bb6bc26f3388d29163acf2" },
+    "titulo": "Que wasa",
+    "textoprincipal": "esta pelicula me da miedo",
+    "status": false,
+    "createdAt": { "$date": "2025-02-23T19:31:26.671Z" },
+    "updatedAt": { "$date": "2025-02-25T02:52:13.943Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67bd2239f263bb4f864974ff" },
+    "categori": "67bb889a370c6bf61246e802",
+    "user": { "$oid": "67bb6bc26f3388d29163acf2" },
+    "titulo": "Que dwasd",
+    "textoprincipal": "esta pelicula me da miedo",
+    "status": true,
+    "createdAt": { "$date": "2025-02-25T01:51:53.444Z" },
+    "updatedAt": { "$date": "2025-02-25T02:52:13.943Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67bd25d3ceb4312a65f12c95" },
+    "categori": "67bb889a370c6bf61246e802",
+    "user": { "$oid": "67bb6bc26f3388d29163acf2" },
+    "titulo": "Que dwasd",
+    "textoprincipal": "esta mierda me da miedo",
+    "status": false,
+    "createdAt": { "$date": "2025-02-25T02:07:15.209Z" },
+    "updatedAt": { "$date": "2025-02-25T02:52:13.943Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67bd260fceb4312a65f12c9d" },
+    "categori": "67bb889a370c6bf61246e802",
+    "user": { "$oid": "67bb6bc26f3388d29163acf2" },
+    "titulo": "Que dwasd",
+    "textoprincipal": "esta mierda me da miedo",
+    "status": true,
+    "createdAt": { "$date": "2025-02-25T02:08:15.290Z" },
+    "updatedAt": { "$date": "2025-02-25T02:52:13.943Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67bd2680ceb4312a65f12caa" },
+    "categori": "67bb889a370c6bf61246e802",
+    "user": { "$oid": "67bb6bc26f3388d29163acf2" },
+    "titulo": "Que wq",
+    "textoprincipal": "esta mierda me da miedo",
+    "status": true,
+    "createdAt": { "$date": "2025-02-25T02:10:08.908Z" },
+    "updatedAt": { "$date": "2025-02-25T02:52:13.943Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67bd26e449c8a67248d287ee" },
+    "categori": "67bb889a370c6bf61246e802",
+    "user": { "$oid": "67bb6bc26f3388d29163acf2" },
+    "titulo": "Que wq",
+    "textoprincipal": "esta mierda me da miedo",
+    "status": true,
+    "createdAt": { "$date": "2025-02-25T02:11:48.692Z" },
+    "updatedAt": { "$date": "2025-02-25T02:52:13.943Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67bd26f5d868ed890a6219fb" },
+    "categori": "67bb889a370c6bf61246e802",
+    "user": { "$oid": "67bb6bc26f3388d29163acf2" },
+    "titulo": "Que wq",
+    "textoprincipal": "esta mierda me da miedo",
+    "status": true,
+    "createdAt": { "$date": "2025-02-25T02:12:05.027Z" },
+    "updatedAt": { "$date": "2025-02-25T02:52:13.943Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67bd27b3143100f8bcf65255" },
+    "categori": "67bb889a370c6bf61246e802",
+    "user": { "$oid": "67bb6bc26f3388d29163acf2" },
+    "titulo": "Que wq",
+    "textoprincipal": "esta mierda me da miedo",
+    "status": true,
+    "createdAt": { "$date": "2025-02-25T02:15:15.044Z" },
+    "updatedAt": { "$date": "2025-02-25T02:52:13.943Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67bd282c143100f8bcf65260" },
+    "categori": "67bb889a370c6bf61246e802",
+    "user": { "$oid": "67bb6bc26f3388d29163acf2" },
+    "titulo": "Que wq",
+    "textoprincipal": "esta mierda me da miedo",
+    "status": true,
+    "createdAt": { "$date": "2025-02-25T02:17:16.128Z" },
+    "updatedAt": { "$date": "2025-02-25T02:52:13.943Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67bd2a915db9408cd20c9c0c" },
+    "categori": "67bb889a370c6bf61246e802",
+    "user": { "$oid": "67bb6bc26f3388d29163acf2" },
+    "titulo": "Que wq",
+    "textoprincipal": "esta mierda me da miedo",
+    "status": true,
+    "createdAt": { "$date": "2025-02-25T02:27:29.650Z" },
+    "updatedAt": { "$date": "2025-02-25T02:52:13.943Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67bd2aa617273da21120f1fe" },
+    "categori": "67bb889a370c6bf61246e802",
+    "user": { "$oid": "67bb6bc26f3388d29163acf2" },
+    "titulo": "Que wq",
+    "textoprincipal": "esta mierda me da miedo",
+    "status": true,
+    "createdAt": { "$date": "2025-02-25T02:27:50.422Z" },
+    "updatedAt": { "$date": "2025-02-25T02:52:13.943Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67bd2ab9f66e1a31b4abf33f" },
+    "categori": "67bb889a370c6bf61246e802",
+    "user": { "$oid": "67bb6bc26f3388d29163acf2" },
+    "titulo": "Que wq",
+    "textoprincipal": "esta mierda me da miedo",
+    "status": true,
+    "createdAt": { "$date": "2025-02-25T02:28:09.848Z" },
+    "updatedAt": { "$date": "2025-02-25T02:52:13.943Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67bd2ad6f66e1a31b4abf345" },
+    "categori": "67bb889a370c6bf61246e802",
+    "user": { "$oid": "67bb6bc26f3388d29163acf2" },
+    "titulo": "Que wq",
+    "textoprincipal": "esta mierda me da miedo",
+    "status": true,
+    "createdAt": { "$date": "2025-02-25T02:28:42.019Z" },
+    "updatedAt": { "$date": "2025-02-25T02:52:13.943Z" },
+    "__v": 0
+  }
+]

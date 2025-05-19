@@ -1,0 +1,124 @@
+{
+    "info": {
+        "_postman_id": "e12ab26a-c756-48d7-9b59-f0cdbd70d3b8",
+        "name": "publicacion",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "addPublicacion",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:3000/GestorOpinionesSystem/v1/publicacion",
+                    "path": [
+                        "GestorOpinionesSystem",
+                        "v1",
+                        "publicacion"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "header": [
+                    {
+                        "key": "x-token",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JiODY3MTk4YzNjOTI1ZDFhYjRiZTAiLCJpYXQiOjE3NDA1MzM0NjMsImV4cCI6MTc0MDUzNzA2M30.c747V_NaRptiCbBoE8-F90ZqvVPQ4O5KKZVDybEIJUk"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"titulo\":\"hdios\",\n  \"textoprincipal\":\"Adios como estan\",\n  \"username\":\"pe\",\n  \"categoriname\":\"miedo\"\n  \n}"
+                }
+            }
+        },
+        {
+            "name": "deletePublicaciones",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:3000/GestorOpinionesSystem/v1/publicacion/67be7a0901ade43c8e8efc1b",
+                    "path": [
+                        "GestorOpinionesSystem",
+                        "v1",
+                        "publicacion",
+                        "67be7a0901ade43c8e8efc1b"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "header": [
+                    {
+                        "key": "x-token",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JiODY3MTk4YzNjOTI1ZDFhYjRiZTAiLCJpYXQiOjE3NDA1MzgzMTcsImV4cCI6MTc0MDU0MTkxN30.etS3xZsqdMV3Paluk3LRM1DfaVqs5Dar6efThvWVkxc"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "editPublicacion",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:3000/GestorOpinionesSystem/v1/publicacion/67bb778e24783fb988835893",
+                    "path": [
+                        "GestorOpinionesSystem",
+                        "v1",
+                        "publicacion",
+                        "67bb778e24783fb988835893"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "header": [
+                    {
+                        "key": "x-token",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JiNmJjMjZmMzM4OGQyOTE2M2FjZjIiLCJpYXQiOjE3NDA0NDc4NDAsImV4cCI6MTc0MDQ1MTQ0MH0.uCQl7uIC-Ya0Ee9o2wkRAzLF8ZplIqMXfbi20YjjHKE"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"titulo\":\"Que wasa\",\n  \"textoprincipal\":\"esta pelicula me da miedo\",\n  \"categoriname\":\"wasa\",\n  \"status\":\"true\"\n}"
+                }
+            }
+        },
+        {
+            "name": "publicacionList",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/GestorOpinionesSystem/v1/publicacion/",
+                    "path": [
+                        "GestorOpinionesSystem",
+                        "v1",
+                        "publicacion"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        }
+    ]
+}
