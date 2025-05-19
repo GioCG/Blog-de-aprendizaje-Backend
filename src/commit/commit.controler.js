@@ -210,58 +210,53 @@ export const eliminarCommit = async (req, res) => {
     }
 };
 
-export const listCommits = async (req, res) => {
-    try {
-        const { username, titulo } = req.query;
+export const searchCommitsByUsername = async (req, res) => {
+  try {
+    const { username } = req.params;
 
-        const filtro = { status: true };
 
-        if (username) {
-            const user = await User.findOne({ username: username.toLowerCase() });
-            if (!user) {
-                return res.status(404).json({
-                    success: false,
-                    message: "Usuario no encontrado"
-                });
-            }
-            filtro.user = user._id;
-        }
+    console.log("Buscando usuario con username:", username);
 
-        if (titulo) {
-            const publicacion = await Publicacion.findOne({ titulo: titulo.toLowerCase() });
-            if (!publicacion) {
-                return res.status(404).json({
-                    success: false,
-                    message: "Publicación no encontrada"
-                });
-            }
-            filtro.publicacion = publicacion._id;
-        }
+    const user = await User.findOne({ username: new RegExp(`^${username}$`, "i") });
 
-        const commits = await Commit.find(filtro)
-            .populate('user')
-            .populate('publicacion') 
-            .populate({
-                path: 'parentCommit',
-                populate: {
-                    path: 'user',
-                    select: 'username'
-                }
-            });
-
-        return res.status(200).json({
-            success: true,
-            total: commits.length,
-            commits
-        });
-
-    } catch (err) {
-        console.error(err);
-        return res.status(500).json({
-            success: false,
-            message: "Error al obtener los commits",
-            error: err.message
-        });
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "Usuario no encontrado",
+      });
     }
+
+    const filtro = {
+      user: user._id,
+      status: true,
+    };
+
+
+    const commits = await Commit.find(filtro)
+      .populate("user", "username -_id")
+      .populate({
+        path: "parentCommit",
+        populate: {
+          path: "user",
+          select: "username -_id",
+        },
+      });
+
+    return res.status(200).json({
+      success: true,
+      total: commits.length,
+      commits,
+    });
+  } catch (err) {
+    console.error("Error en searchCommitsByUsername:", err);
+    return res.status(500).json({
+      success: false,
+      message: "Error al buscar los commits por usuario",
+      error: err.message,
+    });
+  }
 };
+
+
+
 

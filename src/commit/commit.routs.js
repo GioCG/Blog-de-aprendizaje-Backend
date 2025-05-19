@@ -1,5 +1,5 @@
 import {Router} from "express";
-import {editarCommit,agregarCommit,eliminarCommit,listCommits} from "../commit/commit.controler.js"
+import {editarCommit,agregarCommit,eliminarCommit,searchCommitsByUsername} from "../commit/commit.controler.js"
 import { deleteFileOnError } from "../middleware/delete-file-on-error.js";
 import {check} from "express-validator";
 import { existeUsuarioById } from "../helpers/db-validator.js";
@@ -40,13 +40,13 @@ router.delete(
 );
 
 router.get(
-    "/",
-    [
-        check("id", "No es un ID válido").isMongoId(),
-        check("id").custom(existeUsuarioById),
-        deleteFileOnError
-    ],
-    listCommits
+  "/:username",
+  [
+    check("username", "El username es obligatorio").notEmpty(),
+    deleteFileOnError
+  ],
+  searchCommitsByUsername
 );
+
 
 export default router;
